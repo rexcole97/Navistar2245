@@ -1,0 +1,26 @@
+﻿@page
+@model NavistarGL.Pages.Departments.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+    
+    <section class="w3-row-padding" >
+
+       
+            @foreach (var item in Model.departments)
+            {
+                <aside class="w3-third w3-container w3-margin-bottom w3-border w3-border-green">
+                       @item.Dhead|@item.DID|@item.Dlocation|@item.Dname
+                       <a asp-page="./Edit" asp-route-id="@item.DID">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.DID">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.DID">Delete</a>
+                 </aside>
+            }
+      
+        </section>
+       

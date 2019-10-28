@@ -1,0 +1,44 @@
+﻿@page
+@model NavistarGL.Pages.Departments.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>departments</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="departments.Dname" class="control-label"></label>
+                <input asp-for="departments.Dname" class="form-control" />
+                <span asp-validation-for="departments.Dname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="departments.Dlocation" class="control-label"></label>
+                <input asp-for="departments.Dlocation" class="form-control" />
+                <span asp-validation-for="departments.Dlocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="departments.Dhead" class="control-label"></label>
+                <input asp-for="departments.Dhead" class="form-control" />
+                <span asp-validation-for="departments.Dhead" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
